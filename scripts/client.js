@@ -23,7 +23,17 @@ function addEmployee() {
     console.log(firstName, lastName, iD, jobTitle, salary);
     newEmployee(firstName, lastName, iD, jobTitle, salary);
     console.log(currentStaff);
-}
+    emptyInputs();
+} // end addEmployee
+
+/**
+ * Creates employee object and pushes object to currentStaff array
+ * @param {string} firstNameInput 
+ * @param {string} lastNameInput 
+ * @param {string} numberInput 
+ * @param {string} titleInput 
+ * @param {string} salaryInput 
+ */
 
 function newEmployee(firstNameInput, lastNameInput, numberInput, titleInput, salaryInput){
     console.log('in newEmployee');
@@ -36,4 +46,13 @@ function newEmployee(firstNameInput, lastNameInput, numberInput, titleInput, sal
     };
     console.log(employee);
     currentStaff.push(employee);
-}
+} // end newEmployee
+
+function emptyInputs(){
+    console.log('in emptyInputs');
+    $('#first-name-submit').val('');
+    $('#last-name-submit').val('');
+    $('#id-submit').val('');
+    $('#title-submit').val('');
+    $('#salary-input').val('');
+} // end emptyInputs
