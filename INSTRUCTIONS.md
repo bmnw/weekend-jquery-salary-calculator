@@ -13,9 +13,9 @@ A 'Submit' button should collect the form information, store the information to 
 
 -[x] create click handler for add employee button
 -[x] newEmployee function to create an employee object with the input values as object properties, create currentStaff empty array to hold employee objects
--[ ] call newEmployee within addEmployee
+-[x] call newEmployee within addEmployee with input variables as parameters
 -[ ] displayEmployeeInfo function to take the employee object properties and display them in a table row with a delete button in the last cell of the row
--[ ] 
+-[ ] empty input fields when add employee is clicked
 
 Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 

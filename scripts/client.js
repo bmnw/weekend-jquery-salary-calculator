@@ -22,6 +22,7 @@ function addEmployee() {
     let salary = $('#salary-input').val();
     console.log(firstName, lastName, iD, jobTitle, salary);
     newEmployee(firstName, lastName, iD, jobTitle, salary);
+    console.log(currentStaff);
 }
 
 function newEmployee(firstNameInput, lastNameInput, numberInput, titleInput, salaryInput){
