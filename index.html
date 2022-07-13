@@ -13,8 +13,11 @@
 
     <header>
         <h1>
-            Salary Calculator
+            Rhubarb Pies, Inc.
         </h1>
+        <h3>
+            Accounting Deptartment: CONFIDENTIAL
+        </h3>
     </header>
     <div id="content">
     <div class="input-fields">
@@ -44,10 +47,30 @@
             type="number"
         >
     </div>
-     <button id="add-employee" class="button-submit" data-purpose="submit">Add Employee</button>
-    
+    <button id="add-employee" class="button-submit" data-purpose="submit">Add Employee</button>
+    <h2>Current Month's Staffing</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Employee ID</th>
+            <th>Job Title</th>
+            <th>Annual Salary</th>
+            <th>Remove Entries</th>
+        </tr>
+        <tr>
+            <td>Waffle</td>
+            <td>Nadziejka Waller</td>
+            <td>1703</td>
+            <td>CEO</td>
+            <td>78000</td>
+            <td><button class="button-delete" data-purpose="delete">Delete</button></td>
+        </tr>
+    </table>
+    <h3>
+        Payroll Costs: <span id="total-cost">$0</span>
+    </h3>
     </div>
-
 </body>
 
 </html>
