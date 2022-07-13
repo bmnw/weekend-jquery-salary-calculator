@@ -5,9 +5,27 @@ $(readyNow);
 function readyNow() {
     console.log('ready now');
     $('#add-employee').on('click', addEmployee);
+    $('body').on('click', '.button-delete', removeEmployee);
 }
 
 let currentStaff = [];
+let monthlyCost = 0;
+
+/**
+ * Removes row of employee info
+ */
+
+function removeEmployee() {
+    console.log('in removeEmployee');
+    // make monthly cost a global variable
+    // set costRemoved equal to the salary in the deleted row
+    let costRemoved = $(this).parent().siblings().filter('td.salary').html();
+    console.log('removed cost:', costRemoved);
+    // display updated monthlyCost
+    $(this).parent().parent().remove();
+    // somehow also remove that employee object from currentStaff array?
+
+} // end removeEmployee
 
 /**
  * Gather input values for an employee and appends the data to the staffing table
@@ -65,7 +83,6 @@ function emptyInputs(){
 function displayEmployeeInfo(staffInput){
     console.log('in displayEmployeeInfo');
     $('td').empty();
-    let monthlyCost = 0;
     for(let employee of staffInput){
         $('#current-staff').append(`
             <tr>
@@ -73,7 +90,7 @@ function displayEmployeeInfo(staffInput){
                 <td>${employee.lastName}</td>
                 <td>${employee.iD}</td>
                 <td>${employee.title}</td>
-                <td>${employee.salary}</td>
+                <td class="salary">${employee.salary}</td>
                 <td><button class="button-delete" data-purpose="delete">Delete</button></td>
             </tr>
         `);
@@ -82,4 +99,4 @@ function displayEmployeeInfo(staffInput){
             <span id="total-cost">$${monthlyCost.toLocaleString()}</span>
         `);
     } // end for of
-}
+} // end displayEmployeeInfo
