@@ -21,6 +21,8 @@ A 'Submit' button should collect the form information, store the information to 
 -[x] delete button on click removes the related row of info
     -[x] click handler with event delegation for $(this) delete button
 -[x] delete button also subtracts the removed employees monthly pay from the payroll cost <span>
+-[ ] add red background if monthly cost exheeds 20k by adding and removing class with background color styling
+    - [x] create checkTotalCost function
 
 Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 

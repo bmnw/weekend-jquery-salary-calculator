@@ -1,3 +1,11 @@
 body {
     background-color: teal;
 }
+
+.under-budget {
+    background-color: none;
+}
+
+.over-budget {
+    background-color: red;
+}

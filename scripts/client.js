@@ -32,6 +32,7 @@ function removeEmployee() {
     $(this).parent().parent().remove();
     // somehow also remove that employee object from currentStaff array?
     // so that when another employee is added after one is deleted, the deleted one doesn't reappear because its still in the array
+    checkTotalCost();
 } // end removeEmployee
 
 /**
@@ -49,6 +50,7 @@ function addEmployee() {
     newEmployee(firstName, lastName, iD, jobTitle, salary);
     console.log(currentStaff);
     displayEmployeeInfo(currentStaff);
+    checkTotalCost();
     emptyInputs();
 } // end addEmployee
 
@@ -109,3 +111,20 @@ function displayEmployeeInfo(staffInput){
         console.log('monthly cost:', monthlyCost);
     } // end for of
 } // end displayEmployeeInfo
+
+/**
+ * check if the monthly total is greater than $20,000. if it is, change background color to red.
+ */
+
+function checkTotalCost(){
+    console.log('in checkTotalCost');
+    if(monthlyCost > 20000){
+        console.log('over budget');
+        $('#total-cost').removeClass('under-budget');
+        $('#total-cost').addClass('over-budget');
+    } else {
+        console.log('under-budget');
+        $('#total-cost').removeClass('over-budget');
+        $('#total-cost').addClass('under-budget');
+    }
+} // end checkTotalCost
