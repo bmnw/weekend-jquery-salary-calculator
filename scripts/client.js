@@ -18,13 +18,20 @@ let monthlyCost = 0;
 function removeEmployee() {
     console.log('in removeEmployee');
     // make monthly cost a global variable
-    // set costRemoved equal to the salary in the deleted row
-    let costRemoved = $(this).parent().siblings().filter('td.salary').html();
-    console.log('removed cost:', costRemoved);
+    // set annualCostRemoved equal to the salary in the deleted row
+    let annualCostRemoved = $(this).parent().siblings().filter('td.salary').html();
+    console.log('removed cost:', annualCostRemoved);
+    // monthly cost is annual divided by 12
+    let monthlyCostRemoved = Math.round(Number(annualCostRemoved)) / 12;
+    // subtract monthlyCostRemoved from monthlyCost
+    monthlyCost -= monthlyCostRemoved;
     // display updated monthlyCost
+    $('#total-cost').html(`
+        <span id="total-cost">$${monthlyCost.toLocaleString()}</span>
+    `);
     $(this).parent().parent().remove();
     // somehow also remove that employee object from currentStaff array?
-
+    // so that when another employee is added after one is deleted, the deleted one doesn't reappear because its still in the array
 } // end removeEmployee
 
 /**
@@ -83,6 +90,7 @@ function emptyInputs(){
 function displayEmployeeInfo(staffInput){
     console.log('in displayEmployeeInfo');
     $('td').empty();
+    monthlyCost = 0;
     for(let employee of staffInput){
         $('#current-staff').append(`
             <tr>
@@ -98,5 +106,6 @@ function displayEmployeeInfo(staffInput){
         $('#total-cost').html(`
             <span id="total-cost">$${monthlyCost.toLocaleString()}</span>
         `);
+        console.log('monthly cost:', monthlyCost);
     } // end for of
 } // end displayEmployeeInfo
