@@ -23,6 +23,7 @@ function addEmployee() {
     console.log(firstName, lastName, iD, jobTitle, salary);
     newEmployee(firstName, lastName, iD, jobTitle, salary);
     console.log(currentStaff);
+    displayEmployeeInfo(currentStaff);
     emptyInputs();
 } // end addEmployee
 
@@ -48,6 +49,10 @@ function newEmployee(firstNameInput, lastNameInput, numberInput, titleInput, sal
     currentStaff.push(employee);
 } // end newEmployee
 
+/**
+ * Empties input fields when Add Employee button is clicked
+ */
+
 function emptyInputs(){
     console.log('in emptyInputs');
     $('#first-name-submit').val('');
@@ -56,3 +61,24 @@ function emptyInputs(){
     $('#title-submit').val('');
     $('#salary-input').val('');
 } // end emptyInputs
+
+function displayEmployeeInfo(staffInput){
+    console.log('in displayEmployeeInfo');
+    let monthlyCost = 0;
+    for(let employee of staffInput){
+        $('#current-staff').append(`
+            <tr>
+                <td>${employee.firstName}</td>
+                <td>${employee.lastName}</td>
+                <td>${employee.iD}</td>
+                <td>${employee.title}</td>
+                <td>${employee.salary}</td>
+                <td><button class="button-delete" data-purpose="delete">Delete</button></td>
+            </tr>
+        `);
+        monthlyCost += Math.round(Number(employee.salary) / 12);
+        $('#total-cost').html(`
+            <span id="total-cost">$${monthlyCost.toLocaleString()}</span>
+        `);
+    } // end for of
+}
