@@ -64,6 +64,7 @@ function emptyInputs(){
 
 function displayEmployeeInfo(staffInput){
     console.log('in displayEmployeeInfo');
+    $('td').empty();
     let monthlyCost = 0;
     for(let employee of staffInput){
         $('#current-staff').append(`
