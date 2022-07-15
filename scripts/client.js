@@ -33,8 +33,11 @@ function removeEmployee() {
     $(this).parent().parent().remove();
     removedID = $(this).parent().siblings().filter('td.id-number').html();
     console.log('removed ID:', removedID);
-    console.log(currentStaff.findIndex(findMatch));
-    //removeFromArray(currentStaff);
+    //console.log(currentStaff.findIndex(findMatch));
+    let indexToRemove = currentStaff.findIndex(findMatch);
+    console.log('indexToRemove:', indexToRemove);
+    currentStaff.splice(indexToRemove, 1);
+    console.log('updated currentStaff:', currentStaff);
     checkTotalCost();
 } // end removeEmployee
 
@@ -45,13 +48,6 @@ function findMatch(object){
             return object.iD;
         }
 } // end findMatch
-
-// function removeFromArray(arrayInput) {
-//     console.log('in removeFromArray');
-//     let indexOfRemovedStaff = arrayInput.findIndex({iD: re});
-//     console.log(indexOfRemovedStaff);
-//     return indexOfRemovedStaff;
-// }
 
 /**
  * Gather input values for an employee and appends the data to the staffing table
