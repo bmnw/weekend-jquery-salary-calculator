@@ -23,19 +23,23 @@ function removeEmployee() {
     let annualCostRemoved = $(this).parent().siblings().filter('td.salary').html();
     console.log('removed cost:', annualCostRemoved);
     // monthly cost is annual divided by 12
-    let monthlyCostRemoved = Math.round(Number(annualCostRemoved)) / 12;
+    let monthlyCostRemoved = Math.round(Number(annualCostRemoved) / 12);
+    console.log('monthly cost:', monthlyCostRemoved);
     // subtract monthlyCostRemoved from monthlyCost
     monthlyCost -= monthlyCostRemoved;
     // display updated monthlyCost
     $('#total-cost').html(`
         <span id="total-cost">$${monthlyCost.toLocaleString()}</span>
     `);
+    // remove deleted row from DOM
     $(this).parent().parent().remove();
+    // get ID number of deleted staff
     removedID = $(this).parent().siblings().filter('td.id-number').html();
     console.log('removed ID:', removedID);
-    //console.log(currentStaff.findIndex(findMatch));
+    // find the array index of the deleted staff object
     let indexToRemove = currentStaff.findIndex(findMatch);
     console.log('indexToRemove:', indexToRemove);
+    // remove object in the indexToRemove position in the array one time
     currentStaff.splice(indexToRemove, 1);
     console.log('updated currentStaff:', currentStaff);
     checkTotalCost();
