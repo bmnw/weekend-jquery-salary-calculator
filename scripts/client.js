@@ -10,6 +10,7 @@ function readyNow() {
 
 let currentStaff = [];
 let monthlyCost = 0;
+let removedID;
 
 /**
  * Removes row of employee info
@@ -30,10 +31,27 @@ function removeEmployee() {
         <span id="total-cost">$${monthlyCost.toLocaleString()}</span>
     `);
     $(this).parent().parent().remove();
-    // somehow also remove that employee object from currentStaff array?
-    // so that when another employee is added after one is deleted, the deleted one doesn't reappear because its still in the array
+    removedID = $(this).parent().siblings().filter('td.id-number').html();
+    console.log('removed ID:', removedID);
+    console.log(currentStaff.findIndex(findMatch));
+    //removeFromArray(currentStaff);
     checkTotalCost();
 } // end removeEmployee
+
+function findMatch(object){
+    console.log('in findMatch');
+    console.log(removedID);
+        if(object.iD === removedID){
+            return object.iD;
+        }
+} // end findMatch
+
+// function removeFromArray(arrayInput) {
+//     console.log('in removeFromArray');
+//     let indexOfRemovedStaff = arrayInput.findIndex({iD: re});
+//     console.log(indexOfRemovedStaff);
+//     return indexOfRemovedStaff;
+// }
 
 /**
  * Gather input values for an employee and appends the data to the staffing table
@@ -96,9 +114,9 @@ function displayEmployeeInfo(staffInput){
     for(let employee of staffInput){
         $('#current-staff').append(`
             <tr>
-                <td>${employee.firstName}</td>
+                <td class="first-name">${employee.firstName}</td>
                 <td>${employee.lastName}</td>
-                <td>${employee.iD}</td>
+                <td class="id-number">${employee.iD}</td>
                 <td>${employee.title}</td>
                 <td class="salary">${employee.salary}</td>
                 <td><button class="button-delete" data-purpose="delete">Delete</button></td>
