@@ -2,6 +2,39 @@ body {
     background-color: teal;
 }
 
+.input-fields {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#submit-buttons {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#staff-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#current-staff {
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+#current-staff th, td {
+    padding: 5px 20px;
+    text-align: center;
+}
+
+#current-staff caption {
+    padding: 10px;
+}
+
 .under-budget {
     background-color: none;
 }
