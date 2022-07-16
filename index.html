@@ -23,6 +23,30 @@
         <h2>
             Accounting Deptartment: CONFIDENTIAL
         </h2>
+        <div id="staff-table">
+            <table id="current-staff">
+                <caption>Current Month's Staffing</caption>
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Employee ID</th>
+                    <th>Job Title</th>
+                    <th>Annual Salary</th>
+                    <th>Remove Entries</th>
+                </thead>
+                <!-- <tr>
+                    <td>Waffle</td>
+                    <td>Nadziejka Waller</td>
+                    <td>1703</td>
+                    <td>CEO</td>
+                    <td>78000</td>
+                    <td><button class="button-delete" data-purpose="delete">Delete</button></td>
+                </tr> -->
+            </table>
+            <h3 id="payroll">
+                Payroll Costs: <span id="total-cost">$0</span>
+            </h3>
+        </div>
         <div class="input-fields">
             <input 
                 id="first-name-submit"
@@ -53,35 +77,10 @@
                 placeholder="Salary"
                 type="text"
             >
+            <div id="submit-buttons">
+                <button id="add-employee" class="button-submit" data-purpose="submit">Add Employee</button>
+            </div>
         </div>
-        <div id="submit-buttons">
-            <button id="add-employee" class="button-submit" data-purpose="submit">Add Employee</button>
-        </div>
-            <!-- <h2>Current Month's Staffing</h2> -->
-        <div id="staff-table">
-            <table id="current-staff">
-                <caption>Current Month's Staffing</caption>
-                <thead>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Employee ID</th>
-                    <th>Job Title</th>
-                    <th>Annual Salary</th>
-                    <th>Remove Entries</th>
-                </thead>
-                <!-- <tr>
-                    <td>Waffle</td>
-                    <td>Nadziejka Waller</td>
-                    <td>1703</td>
-                    <td>CEO</td>
-                    <td>78000</td>
-                    <td><button class="button-delete" data-purpose="delete">Delete</button></td>
-                </tr> -->
-            </table>
-        </div>
-        <h3>
-            Payroll Costs: <span id="total-cost">$0</span>
-        </h3>
     </div>
 </body>
 

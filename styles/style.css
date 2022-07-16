@@ -26,13 +26,16 @@ body {
 
 #content {
     font-family: "Andale Mono", "Courier New", "Monospace";
-    margin: 25px;
+    margin: 30px;
 }
 
+.input-fields{
+    float: left;
+}
 
 input {
     padding: 15px 30px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 20px;
     border-radius: 8px;
     border-color: #CCCCCC;
@@ -60,9 +63,7 @@ input {
 }
 
 #staff-table {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    float: right;
 }
 
 #current-staff {
@@ -85,4 +86,9 @@ input {
 
 .over-budget {
     background-color: red;
+}
+
+#payroll {
+    float: right;
+    margin-right: 20%;
 }
