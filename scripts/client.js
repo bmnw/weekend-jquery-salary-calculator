@@ -109,10 +109,10 @@ function emptyInputs(){
 
 function displayEmployeeInfo(staffInput){
     console.log('in displayEmployeeInfo');
-    $('td').empty();
+    $('#table-body').empty();
     monthlyCost = 0;
     for(let employee of staffInput){
-        $('#current-staff').append(`
+        $('#table-body').append(`
             <tr>
                 <td class="first-name">${employee.firstName}</td>
                 <td>${employee.lastName}</td>
