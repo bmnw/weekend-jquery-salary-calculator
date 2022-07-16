@@ -1,18 +1,62 @@
 body {
-    background-color: teal;
+    background-color: #F0ECE3;
+    margin: 0;
 }
 
-.input-fields {
-    display: flex;
-    justify-content: space-evenly;
+.image-container {
+    font-family: "Geneva", "Sans-Serif";
+    font-weight: bold;
+    background-image: url("another\ pie.png");
+    background-size: 200px;
+    background-color: #a1e9df;
+    height: 200px;
+    margin: 0;
 }
 
-#submit-buttons {
-    margin: 10px;
-    padding: 10px;
-    display: flex;
+.company-title {
+  color: black;
+  background-color: white;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 5px;
+  width: 25%;
+  text-align: center;
+  mix-blend-mode: screen;
+}
+
+#content {
+    font-family: "Andale Mono", "Courier New", "Monospace";
+    margin: 25px;
+}
+
+
+input {
+    padding: 15px 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 8px;
+    border-color: #CCCCCC;
+    box-shadow: 5px 5px #a1e9df;
+}
+
+.button-submit {
+    margin-top: 20px;
+    padding: 15px 30px;
+    width: 268px;
+    height: 53px;
+    font-family: "Andale Mono", "Courier New", "Monospace";
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #a1e9df;
+    border-radius: 8px;
+    border-color: #6E7776;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+}
+
+.button-submit:hover {
+    transform: scale(1.15);
 }
 
 #staff-table {
