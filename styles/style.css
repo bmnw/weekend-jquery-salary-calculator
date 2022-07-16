@@ -71,8 +71,25 @@ input {
     margin: 20px;
 }
 
-#current-staff th, td {
+#current-staff th, #current-staff tr {
+    border: 1px solid black;
+    padding:
+}
+
+#current-staff th {
     padding: 5px 20px;
+    text-align: center;
+    background-color: #a1e9df;
+    color: white;
+}
+
+#current-staff tr:nth-child(odd) {
+    background-color: white;
+    text-align: center;
+}
+
+#current-staff tr:nth-child(even) {
+    background-color: darkgrey;
     text-align: center;
 }
 
