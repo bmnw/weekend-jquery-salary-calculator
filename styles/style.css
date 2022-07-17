@@ -4,24 +4,26 @@ body {
 }
 
 .image-container {
-    font-family: "Geneva", "Sans-Serif";
-    font-weight: bold;
+    font-family: "marker felt", "sans-serif";
     background-image: url("another\ pie.png");
     background-size: 200px;
     background-color: #a1e9df;
     height: 200px;
-    margin: 0;
+    /* margin: 0; */
 }
 
 .company-title {
-  color: black;
-  background-color: white;
-  font-size: 20px;
+  color: white;
+  /* background-color: black; */
+  font-size: 25px;
   margin: 0 auto;
-  padding: 5px;
+  /* padding-top: 1px; */
   width: 25%;
+  height: 192px;
   text-align: center;
-  mix-blend-mode: screen;
+  border: 4px solid white;
+  /* mix-blend-mode: screen; */
+  -webkit-text-stroke: 1px #898f8e;
 }
 
 #content {
@@ -37,16 +39,25 @@ input {
     padding: 15px 30px;
     margin-bottom: 15px;
     font-size: 20px;
+    font-family: "Andale Mono", "Courier New", "Monospace";
     border-radius: 8px;
     border-color: #CCCCCC;
     box-shadow: 5px 5px #a1e9df;
     background-color: white;
 }
 
+input::placeholder {
+    font-family: "Andale Mono", "Courier New", "Monospace";
+}
+
+input:active {
+    background-color: #FFDAB9;
+}
+
 .button-submit {
     margin-top: 20px;
     padding: 15px 30px;
-    width: 268px;
+    width: 310px;
     height: 53px;
     font-family: "Andale Mono", "Courier New", "Monospace";
     font-size: 20px;
@@ -58,6 +69,10 @@ input {
 
 .button-submit:hover {
     transform: scale(1.15);
+}
+
+.button-submit:active {
+    background-color: #FFDAB9;
 }
 
 #staff-table {
@@ -90,6 +105,10 @@ input {
     text-align: center;
 }
 
+#current-staff tr:hover {
+    background-color: #FFDAB9;
+}
+
 #current-staff td {
     padding: 8px;
 }
@@ -120,7 +139,7 @@ input {
 #payroll {
     float: right;
     margin-right: 20%;
-    border: 3px solid #6E7776;
+    border: 2px solid #6E7776;
     padding: 8px 16px;
 }
 
