@@ -40,6 +40,7 @@ input {
     border-radius: 8px;
     border-color: #CCCCCC;
     box-shadow: 5px 5px #a1e9df;
+    background-color: white;
 }
 
 .button-submit {
@@ -53,9 +54,6 @@ input {
     background-color: #a1e9df;
     border-radius: 8px;
     border-color: #6E7776;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 .button-submit:hover {
@@ -92,6 +90,21 @@ input {
     text-align: center;
 }
 
+#current-staff td {
+    padding: 8px;
+}
+
+.button-delete {
+    font-family: "Andale Mono", "Courier New", "Monospace";
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.button-delete:hover {
+    background-color: #FFD700;
+}
+
 #current-staff caption {
     padding: 10px;
 }
@@ -101,10 +114,16 @@ input {
 }
 
 .over-budget {
-    background-color: red;
+    background-color: #FF4500;
 }
 
 #payroll {
     float: right;
     margin-right: 20%;
+    border: 3px solid #6E7776;
+    padding: 8px 16px;
+}
+
+#total-cost {
+    padding: 5px 10px;
 }
